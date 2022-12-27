@@ -19,11 +19,9 @@ The solution of an algebraic equation is the process of finding a number or set 
 <br><br>Transcendental Equation<br>
 A transcendental equation is an equation into which transcendental functions (such as exponential, logarithmic, trigonometric, or inverse trigonometric) of one of the variables (s) have been solved for. Transcendental equations do not have closed-form solutions. 
 
-
 Transcendental equations examples includes: 
-x=e−x,x=cosx,2x=x2	
+x=e−x,x=cosx,2x=x²
 
-<br><br>
 1. Find dy/dx for the function y = In(tan x + sec x)<br>
 
 Solution: <br>
