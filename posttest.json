@@ -1,0 +1,39 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following is an iterative method?",
+      "answers": {
+        "a": "Gauss Seidel",
+        "b": "Factorization",
+        "c": "Gauss Jordan",
+        "d": "Gauss Elimination"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is also known as the Newton Raphson method?",
+      "answers": {
+        "a": "Chord Method",
+        "b": "Tangent Method",
+        "c": "Diameter Method",
+        "d": "Secant Method"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}
