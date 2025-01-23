@@ -1,96 +1,425 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
-    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Equation Root Finder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 1px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            height: 100%;
+        }
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            text-align: center;
+            color: #ffffff;
+            background-color: #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            flex: 1;
+            min-height: 0;
+        }
+        .box {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 78%;
+        }
+        .box-title {
+            text-align: center;
+            color: #2c3e50;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            border-radius: 8px 8px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .box-content {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .button-container {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #ddd;
+            border-radius: 0 0 8px 8px;
+            position: sticky;
+            bottom: 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        #graphContainer {
+            flex: 1;
+            min-height: 0;
+            position: relative;
+            height: calc(100% - 100px);
+        }
+        #graphCanvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .help-text {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .example-select {
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
-     <div class="heading">
-        <div class="heading--1">
-            <h2>To Find the roots of algebraic and transcendental equations</h2>
-        </div>
-        <select name="eqation-type" id="select-eqn">
-            <option value="select">Select</option>
-            <option value="Algebraic-equation" class="alg-eqn">Algebraic equation</option>
-            <option value="Transcendental-equation" class="trsn-eqn">Transcendental equation</option>
-        </select>
-        <div class="heading--2 algebra1">
-            <h1> For finding the roots of algebraic equations.
-        </div>
-        </h1>
-        <div class="heading--2 transe1">
-            <h1> For finding the roots of transcendental equation.
-            </h1>
-        </div>
-    </div>
-    <div class="algebra">
-
-        <div class="explanation">
-            <p>Given a function f(x) on floating number x and two numbers 'a' and 'b' such that f(a)*f(b) < 0 and f(x)
-                    is continuous in [a, b]. Here f(x) represents algebraic or transcendental equation. Find root of
-                    function in interval [a, b] (Or find a value of x such that f(x) is 0).<br> <b>Input:</b> <br> A
-                    function of x,
-                    <u><b>for example</b></u> x<sup>3</sup> +4x<sup>2</sup> + 8. And two values: a=(-5) and b= (1) such
-                    that
-                    f(a)*f(b) < 0, i.e., f(a) and f(b) have opposite signs.<br><b>Output:</b><br> The value of root is :
-                        -4.412 or any other value with allowed deviation from root.</p>
-        </div>
-        <form class="bisection-method">
-            <p class="equation-detail">f(x)= a x<sup>3</sup> +b x<sup>2</sup>+c x<sup>1</sup> + d :</p>
-            <p class="equation-detail">Enter the coefficients of the equation:</p>
-            <input type="text" placeholder="a" class="cube--equation cube-coefficient">x<sup>3</sup>+
-            <input type="text" placeholder="b" class="cube--equation square-coefficient">x<sup>2</sup>+
-            <input type="text" placeholder="c" class="cube--equation linear-coefficient">x<sup>1</sup>+
-            <input type="text" placeholder="d" class="cube--equation coefficient"><br>
-            <label for="iterations">Enter the number of iterations: </label>
-            <input type="text" placeholder="i" class="cube--equation iterations"><br>
-            <label for="intervals">Enter the intervals [g,h]: </label>g =
-            <input type="text" placeholder="g" class="cube--equation interval--A">, h =
-            <input type="text" placeholder="h" class="cube--equation interval--B"> <br>
-            <label for="rootGenerate">For generating root: </label>
-            <button class="btn--cls root--finder">Click here</button>
-
-            <div class="result">
-                <span class="validRange">Result: </span><span class="eqnResult"></span>
+    <div class="container">
+        <h1 class="title">Advanced Equation Root Finder</h1>
+        <div class="grid-container">
+            <div class="box">
+                <div class="box-title">Input Parameters</div>
+                <div class="box-content">
+                    <div class="form-group">
+                        <label for="equationType">Example Equations:</label>
+                        <select id="equationType" class="example-select" onchange="loadExample()">
+                            <option value="">Select an example equation</option>
+                            <optgroup label="Algebraic Equations">
+                                <option value="x^2 - 4">Quadratic: x^2 - 4</option>
+                                <option value="x^3 - x - 2">Cubic: x^3 - x - 2</option>
+                                <option value="x^4 - 5x^2 + 4">Polynomial: x^4 - 5x^2 + 4</option>
+                            </optgroup>
+                            <optgroup label="Transcendental Equations">
+                                <option value="sin(x) - 0.5">Trigonometric: sin(x) - 0.5</option>
+                                <option value="exp(x) - 5">Exponential: exp(x) - 5</option>
+                                <option value="log(x) - 1">Logarithmic: log(x) - 1</option>
+                                <option value="x*cos(x) - 2">Mixed: x*cos(x) - 2</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="equation">Equation (use 'x' as variable):</label>
+                        <input type="text" id="equation" value="x^2 - 4">
+                        <small class="help-text">
+                            Supported functions: x^n, sin(x), cos(x), tan(x), exp(x), log(x)<br>
+                            Examples:<br>
+                            - Algebraic: x^3 - 2x - 5<br>
+                            - Transcendental: sin(x) - x/3, exp(x) - 3x
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="method">Method:</label>
+                        <select id="method">
+                            <option value="bisection">Bisection Method</option>
+                            <option value="newton">Newton-Raphson Method</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="xMin">Lower Bound:</label>
+                        <input type="number" id="xMin" value="-5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="xMax">Upper Bound:</label>
+                        <input type="number" id="xMax" value="5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="tolerance">Tolerance:</label>
+                        <input type="number" id="tolerance" value="0.0001" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxIterations">Max Iterations:</label>
+                        <input type="number" id="maxIterations" value="100">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button onclick="findRoot()">Find Root</button>
+                </div>
             </div>
-            <label for="gtext">Graph:</label>
-        </form>
-    </div>
-
-
-    <div class="transe">
-        <div class="explanation">
-            <p>Given a function f(x) on floating number x and two numbers 'a' and 'b' such that f(a)*f(b) < 0 and f(x)
-                    is continuous in [a, b]. Here f(x) represents transcendental equation. Find root of
-                    function in interval [a, b] (Or find a value of x such that f(x) is 0).<br> <b>Input:</b> <br> A
-                    function of x,
-                    <u><b>for example</b></u> x<sup>2</sup> + x - cos(x). And two values: a=(0) and b= (1) such
-                    that
-                    f(a)*f(b) < 0, i.e., f(a) and f(b) have opposite signs.<br><b>Output:</b><br> The value of root is :
-                        0.55004 or any other value with allowed deviation from root.</p>
-        </div>
-        <div class="bisection-method">
-            <p>Make sure to add space after typing every variable in the function. <br> example.  x<sup>2</sup> + x - cos(x). </p>
-            <label for="">Enter the function</label>
-        <input type="text" class="check"> <br>
-        <label for="lower limit">Lower Limit</label>
-        <input type="text" class="lowerLim"><br>
-        <label for="upper limit">Upper Limit</label>
-        <input type="text" class="upperLim"> <br>
-        <label for="rootGenerate">For generating root: </label>
-            <button type="submit" class="btn--cls sub">Click here</button>
-
-            <div class="result">
-                <span class="validRange1">Result: </span><span class="eqnResult1"></span>
+            <div class="box">
+                <div class="box-title">Results and Output</div>
+                <div class="box-content">
+                    <div id="result" class="result">Results will appear here...</div>
+                    <div id="graphContainer">
+                        <canvas id="graphCanvas"></canvas>
+                    </div>
+                </div>
             </div>
-            <label for="gtext">Graph:</label>
         </div>
     </div>
-    <div class="aadha">
-        <div id="graph">
-        </div>
-    </div>
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+
+    <script>
+        let chart = null;
+
+        function loadExample() {
+            const select = document.getElementById('equationType');
+            const equation = select.value;
+            if (equation) {
+                document.getElementById('equation').value = equation;
+                
+                // Adjust bounds based on equation type
+                if (equation.includes('log')) {
+                    document.getElementById('xMin').value = 0.1;
+                    document.getElementById('xMax').value = 5;
+                } else if (equation.includes('sin') || equation.includes('cos')) {
+                    document.getElementById('xMin').value = -3.14;
+                    document.getElementById('xMax').value = 3.14;
+                } else if (equation.includes('exp')) {
+                    document.getElementById('xMin').value = -2;
+                    document.getElementById('xMax').value = 2;
+                }
+                
+                findRoot();
+            }
+        }
+
+        function evaluateExpression(expr, x) {
+            try {
+                return math.evaluate(expr, { x: x });
+            } catch (e) {
+                console.error('Error evaluating expression:', e);
+                return NaN;
+            }
+        }
+
+        function bisectionMethod(f, a, b, tol, maxIter) {
+            let fa = f(a);
+            let fb = f(b);
+            
+            if (fa * fb >= 0) {
+                throw new Error("The chosen interval does not contain a root or contains multiple roots.");
+            }
+
+            let iter = 0;
+            let c, fc;
+            let error = tol + 1;
+            let steps = [];
+
+            while (error > tol && iter < maxIter) {
+                c = (a + b) / 2;
+                fc = f(c);
+                
+                steps.push({
+                    iteration: iter + 1,
+                    value: c,
+                    error: error
+                });
+
+                if (fc === 0) {
+                    break;
+                }
+
+                if (fa * fc < 0) {
+                    b = c;
+                    fb = fc;
+                } else {
+                    a = c;
+                    fa = fc;
+                }
+
+                error = Math.abs(b - a);
+                iter++;
+            }
+
+            return {
+                root: c,
+                iterations: iter,
+                error: error,
+                steps: steps
+            };
+        }
+
+        function newtonMethod(f, x0, tol, maxIter) {
+            let iter = 0;
+            let error = tol + 1;
+            let x = x0;
+            let steps = [];
+            
+            const h = 0.0001;
+
+            while (error > tol && iter < maxIter) {
+                let fx = f(x);
+                let fPrime = (f(x + h) - f(x - h)) / (2 * h);
+                
+                if (Math.abs(fPrime) < 1e-10) {
+                    throw new Error("Derivative too close to zero.");
+                }
+
+                let xNew = x - fx / fPrime;
+                error = Math.abs(xNew - x);
+                
+                steps.push({
+                    iteration: iter + 1,
+                    value: x,
+                    error: error
+                });
+
+                x = xNew;
+                iter++;
+            }
+
+            return {
+                root: x,
+                iterations: iter,
+                error: error,
+                steps: steps
+            };
+        }
+
+        function plotFunction(expr, xMin, xMax, root = null) {
+            const canvas = document.getElementById('graphCanvas');
+            const ctx = canvas.getContext('2d');
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            const points = 200;
+            const step = (xMax - xMin) / points;
+            const data = [];
+            
+            for (let x = xMin; x <= xMax; x += step) {
+                const y = evaluateExpression(expr, x);
+                if (!isNaN(y) && Math.abs(y) < 1000) {
+                    data.push({ x: x, y: y });
+                }
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Function',
+                        data: data,
+                        borderColor: 'blue',
+                        fill: false
+                    },
+                    root ? {
+                        label: 'Root',
+                        data: [{ x: root, y: 0 }],
+                        backgroundColor: 'red',
+                        borderColor: 'red',
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        type: 'scatter'
+                    } : null].filter(Boolean)
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'center',
+                            title: {
+                                display: true,
+                                text: 'x'
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'center',
+                            title: {
+                                display: true,
+                                text: 'y'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function findRoot() {
+            const expr = document.getElementById('equation').value;
+            const method = document.getElementById('method').value;
+            const xMin = parseFloat(document.getElementById('xMin').value);
+            const xMax = parseFloat(document.getElementById('xMax').value);
+            const tolerance = parseFloat(document.getElementById('tolerance').value);
+            const maxIterations = parseInt(document.getElementById('maxIterations').value);
+
+            const f = x => evaluateExpression(expr, x);
+
+            try {
+                let result;
+                if (method === 'bisection') {
+                    result = bisectionMethod(f, xMin, xMax, tolerance, maxIterations);
+                } else {
+                    result = newtonMethod(f, (xMin + xMax) / 2, tolerance, maxIterations);
+                }
+
+                const resultHTML = `
+                    <strong>Root found:</strong> ${result.root.toFixed(6)}<br>
+                    <strong>Iterations:</strong> ${result.iterations}<br>
+                    <strong>Error:</strong> ${result.error.toFixed(6)}<br>
+                    <strong>f(root):</strong> ${f(result.root).toFixed(6)}
+                `;
+                
+                document.getElementById('result').innerHTML = resultHTML;
+                plotFunction(expr, xMin, xMax, result.root);
+            } catch (error) {
+                document.getElementById('result').innerHTML = `Error: ${error.message}`;
+                plotFunction(expr, xMin, xMax);
+            }
+        }
+
+        // Initial plot
+        window.onload = () => {
+            const expr = document.getElementById('equation').value;
+            const xMin = parseFloat(document.getElementById('xMin').value);
+            const xMax = parseFloat(document.getElementById('xMax').value);
+            plotFunction(expr, xMin, xMax);
+        };
+    </script>
 </body>
 </html>
