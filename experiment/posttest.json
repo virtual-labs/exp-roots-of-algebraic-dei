@@ -15,7 +15,7 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "c",
+      "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
@@ -29,6 +29,74 @@
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
         "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following methods always converges but may be slower?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Newton-Raphson Method",
+        "c": "Secant Method",
+        "d": "Regula Falsi Method"
+      },
+      "explanations": {
+        "a": "Explanation 1: Bisection is guaranteed to converge but slowly.",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The Newton-Raphson method requires which of the following for iteration?",
+      "answers": {
+        "a": "Only function values",
+        "b": "Only derivative values",
+        "c": "Both function and derivative values",
+        "d": "No values required"
+      },
+      "explanations": {
+        "a": "Explanation 1",
+        "b": "Explanation 2",
+        "c": "Explanation 3: Newton-Raphson uses both f(x) and f’(x).",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is NOT a bracketing method?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Regula Falsi Method",
+        "c": "Secant Method",
+        "d": "False Position Method"
+      },
+      "explanations": {
+        "a": "Explanation 1",
+        "b": "Explanation 2",
+        "c": "Explanation 3: Secant method is an open method, not bracketing.",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In the Bisection Method, the root lies between two points if:",
+      "answers": {
+        "a": "f(a) * f(b) > 0",
+        "b": "f(a) * f(b) < 0",
+        "c": "f(a) = f(b)",
+        "d": "f(a) + f(b) = 0"
+      },
+      "explanations": {
+        "a": "Explanation 1",
+        "b": "Explanation 2: If f(a) and f(b) have opposite signs, a root exists between them.",
         "c": "Explanation 2",
         "d": "Explanation 2"
       },

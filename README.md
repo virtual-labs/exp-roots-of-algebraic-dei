@@ -1,24 +1,23 @@
 ## Introduction
 
+<b>Discipline | <b> Computer Science  
+:--|:--|  
+<b> Lab | <b> Scientific Computing  
+<b> Experiment|     <b> Finding roots of algebraic and transcendental equations  
 
-<b>Discipline | <b>Fill your discipline name here
-:--|:--|
-<b> Lab | <b> Fill your lab name here
-<b> Experiment|     <b> Fill your experiment name and number here
+### About the Experiment  
 
-### About the Experiment 
+This experiment focuses on numerical methods used to determine the roots of algebraic and transcendental equations that cannot be solved analytically. The study involves implementing iterative techniques such as the Bisection Method, Newton-Raphson Method, and Secant Method to approximate roots with desired accuracy. It helps students understand convergence criteria, error analysis, and practical applications of root-finding in scientific and engineering computations.  
 
-Fill a brief description of this experiment here
+<b>Name of Developer | <b> Dr. Sanjay Saini 
+:--|:--|  
+<b> Institute | <b> Dayalbagh Educational Institute  
+<b> Email id|     <b> sanjay.saini@dei.ac.in  
+<b> Department |  <b> Physics and Computer Science  
 
-<b>Name of Developer | <b> Fill the name of experiment owner here 
-:--|:--|
-<b> Institute | <b>  
-<b> Email id|     <b>  
-<b> Department |  
+### Contributors List  
 
-### Contributors List
-
-SrNo | Name | Faculty or Student | Department| Institute | Email id
-:--|:--|:--|:--|:--|:--|
-1 | . | . | . | . | .
-2 | . | . | . | . | .
+SrNo | Name | Faculty or Student | Department | Institute | Email id  
+:--|:--|:--|:--|:--|:--|  
+1 | Aditya Vardhan | Student | Physics and Computer Sci. | Dayalbagh Educational Institute | vardhana3098@gmail.com  
+2 | Mohit Yadav | Student | Physics and Computer Sci. | Dayalbagh Educational Institute | mohityadavdei@yahoo.in  
