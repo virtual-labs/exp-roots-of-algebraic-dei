@@ -3,8 +3,8 @@
 
 <b>Discipline | <b>Fill your discipline name here
 :--|:--|
-<b> Lab | <b> Fill your lab name here
-<b> Experiment|     <b> Fill your experiment name and number here
+<b> Lab | <b> Scientific Computing
+<b> Experiment|     <b> Finding roots of algebraic and transcendental equations
 
 ### About the Experiment 
 
@@ -20,5 +20,5 @@ Fill a brief description of this experiment here
 
 SrNo | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
-1 | . | . | . | . | .
-2 | . | . | . | . | .
+1 | Aditya Vardhan | Student  | Physics and Computer Sci. | Dayalbagh Educational Institute | vardhana3098@gmail.com
+2 | Mohit Yadav | Student  | Physics and Computer Sci. | Dayalbagh Educational Institute | mohityadavdei@yahoo.in
