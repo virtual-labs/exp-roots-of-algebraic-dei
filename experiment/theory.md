@@ -1,5 +1,3 @@
-# Theory
-
 ## Algebraic Equation
 
 An **algebraic equation** is an equation expressed in the form:  
@@ -38,8 +36,6 @@ The same principle applies for **subtraction, multiplication, and division**. As
 
 The **solution of an algebraic equation** involves finding values of the variables that satisfy the equation. Such values are called the **roots of the equation**.  
 
----
-
 ## Transcendental Equation
 
 A **transcendental equation** is an equation that contains **transcendental functions** such as exponential, logarithmic, trigonometric, or inverse trigonometric functions.  
@@ -52,61 +48,6 @@ $$
 x = e^{-x}, \quad x = \cos(x), \quad 2x = x^2
 $$  
 
----
-
-## Example Problem
-
-**Find \( \frac{dy}{dx} \) for the function:**  
-
-$$
-y = \ln(\tan(x) + \sec(x))
-$$  
-
-### Solution:  
-
-First, recall the derivative rule:  
-
-$$
-\frac{d}{dx}[\ln(f(x))] = \frac{f'(x)}{f(x)}
-$$  
-
-Here,  
-
-$$
-f(x) = \tan(x) + \sec(x)
-$$  
-
-Now differentiate:  
-
-$$
-\frac{dy}{dx} = \frac{d}{dx}[\ln(\tan(x) + \sec(x))]
-$$  
-
-$$
-= \frac{\sec^2(x) + \sec(x)\tan(x)}{\tan(x) + \sec(x)}
-$$  
-
-Simplify the numerator:  
-
-$$
-\frac{dy}{dx} = \frac{\sec(x)(\tan(x) + \sec(x))}{\tan(x) + \sec(x)}
-$$  
-
-Cancel terms:  
-
-$$
-\frac{dy}{dx} = \sec(x)
-$$  
-
----
-
-## Key Takeaways
-
-- **Algebraic equations** involve polynomials and are always balanced.  
-- **Transcendental equations** involve functions like exponential, logarithmic, or trigonometric and usually require numerical solutions.  
-- Derivatives of such equations often simplify elegantly with proper application of calculus rules.  
-
-
 ## Key Differences Between Algebraic and Transcendental Equations  
 
 | Feature | Algebraic Equation | Transcendental Equation |
@@ -115,9 +56,7 @@ $$
 | Solutions | Often exact (closed-form) | Usually approximate (numerical methods) |
 | Example | \( x^2 - 5x + 6 = 0 \) | \( x = \cos x \) |
 
----
-
-## Additional Understanding  
+## Insight
 
 - **Algebraic equations** are simpler to solve since they deal with polynomials, and exact roots can often be found using formulas (e.g., quadratic formula).  
 - **Transcendental equations** are more complex and require iterative techniques for finding approximate solutions, as exact solutions are rare.  
