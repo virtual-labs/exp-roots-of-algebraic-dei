@@ -1,1 +1,1 @@
-To find the roots of Algebraic and Transcendental equations.
+To study and implement numerical methods such as Bisection Method, Newton-Raphson Method, Secant Method, and Regula-Falsi Method for finding the roots of algebraic and transcendental equations, and to analyze their convergence, accuracy, and applicability in solving real-world scientific and engineering problems.
