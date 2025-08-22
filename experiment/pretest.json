@@ -10,10 +10,10 @@
         "d": "5"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "x² + y² = 1² + 2² = 1 + 4 = 5, not 1",
+        "b": "x² + y² = 1 + 4 = 5, not 2",
+        "c": "x² + y² = 1 + 4 = 5, not 4",
+        "d": "Correct, since 1² + 2² = 5"
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
@@ -27,12 +27,80 @@
         "d": "None of these"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Substitute: 0² – 0×1 + 1² = 1, not 0",
+        "b": "Substitute: 1, not -1",
+        "c": "Correct, since result is 1",
+        "d": "Not applicable"
       },
       "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a root of the equation x² – 4 = 0?",
+      "answers": {
+        "a": "2",
+        "b": "-2",
+        "c": "Both a and b",
+        "d": "None of these"
+      },
+      "explanations": {
+        "a": "2 is a root since 2² – 4 = 0",
+        "b": "-2 is also a root since (-2)² – 4 = 0",
+        "c": "Correct, both 2 and -2 are roots",
+        "d": "Not correct"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The equation sin(x) = 0 has which of the following roots?",
+      "answers": {
+        "a": "x = 0",
+        "b": "x = π",
+        "c": "x = 2π",
+        "d": "All of these"
+      },
+      "explanations": {
+        "a": "sin(0) = 0, so root exists",
+        "b": "sin(π) = 0, so root exists",
+        "c": "sin(2π) = 0, so root exists",
+        "d": "Correct, all values are roots"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The number of real roots of the equation e^x = 0 is?",
+      "answers": {
+        "a": "0",
+        "b": "1",
+        "c": "2",
+        "d": "Infinite"
+      },
+      "explanations": {
+        "a": "Correct, e^x > 0 for all real x, so no real root exists",
+        "b": "Not correct, e^x never becomes 0",
+        "c": "Not correct",
+        "d": "Not correct"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The root of the linear equation 3x + 6 = 0 is?",
+      "answers": {
+        "a": "-2",
+        "b": "2",
+        "c": "0",
+        "d": "None of these"
+      },
+      "explanations": {
+        "a": "Correct, since 3(-2) + 6 = 0",
+        "b": "Not correct, 3(2) + 6 = 12",
+        "c": "Not correct, 3(0) + 6 = 6",
+        "d": "Not applicable"
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
