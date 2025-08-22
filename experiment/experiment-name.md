@@ -1,1 +1,1 @@
-## To find the roots of Algerbic and Transcendental equations
+## Finding the Roots of Algebraic and Transcendental Equations using Numerical Methods

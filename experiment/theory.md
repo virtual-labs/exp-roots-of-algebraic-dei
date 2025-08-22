@@ -1,34 +1,127 @@
-Algebraic Equation <br>An algebraic equation is an equation in the form:<br>
-P = 0
-<br>Where P is a polynomial.<br>
+# Theory
 
-For example, x + 8 = 0 is an algebraic equation, where x + 8 is a polynomial. Hence, it is also called a polynomial equation.<br>
+## Algebraic Equation
 
-An algebraic equation is always a balanced equation that includes variables, coefficients, and constants.
+An **algebraic equation** is an equation expressed in the form:  
 
-Consider an equation 1+1 = 2.
+$$
+P(x) = 0
+$$  
 
-It is balanced as both sides have the same value. To avoid committing an error that tips the equation out of balance, make sure that any change on one side of the equation is reciprocated on the other side. For example, if you want to add a number 5 to one side of the equation you will have to add the same 5 to the other side of the equation i.e.
+where \( P(x) \) is a polynomial.  
 
+For example:  
+
+$$
+x + 8 = 0
+$$  
+
+Here, \( x + 8 \) is a polynomial, and therefore the equation is called a **polynomial equation**.  
+
+An algebraic equation is always **balanced**, meaning that the values on both sides of the equation are equal. It generally consists of **variables, coefficients, and constants**.  
+
+Consider the equation:  
+
+$$
 1 + 1 = 2
+$$  
 
+This is balanced, since both sides have the same value. When manipulating algebraic equations, any operation performed on one side must also be performed on the other side to preserve balance.  
+
+For example, adding 5 to both sides:  
+
+$$
 1 + 1 + 5 = 2 + 5
+$$  
 
-The same goes for subtraction, multiplication, and division. As long as you do the same thing to both sides of the equation it will remain balanced.<br>
-The solution of an algebraic equation is the process of finding a number or set of numbers that, if substituted for the variables in the equation, reduce it to an identity. Such a number is called a root of the equation.
-<br><br>Transcendental Equation<br>
-A transcendental equation is an equation into which transcendental functions (such as exponential, logarithmic, trigonometric, or inverse trigonometric) of one of the variables (s) have been solved for. Transcendental equations do not have closed-form solutions. 
+The same principle applies for **subtraction, multiplication, and division**. As long as identical operations are performed on both sides, the equation remains balanced.  
 
-Transcendental equations examples includes: 
-x=e−x,x=cosx,2x=x²
+The **solution of an algebraic equation** involves finding values of the variables that satisfy the equation. Such values are called the **roots of the equation**.  
 
-1. Find dy/dx for the function y = In(tan x + sec x)<br>
+---
 
-Solution: <br>
+## Transcendental Equation
 
-dy/dx = x² (1/4x. 4) + In (4x). 2x<br>
+A **transcendental equation** is an equation that contains **transcendental functions** such as exponential, logarithmic, trigonometric, or inverse trigonometric functions.  
 
-= x + 2x In ( 4x)<br>
+Unlike algebraic equations, transcendental equations typically do not have **closed-form solutions** and often require numerical or iterative methods to solve.  
 
-= x( 1 + 2 In (4x))			
-</p>
+### Examples:
+
+$$
+x = e^{-x}, \quad x = \cos(x), \quad 2x = x^2
+$$  
+
+---
+
+## Example Problem
+
+**Find \( \frac{dy}{dx} \) for the function:**  
+
+$$
+y = \ln(\tan(x) + \sec(x))
+$$  
+
+### Solution:  
+
+First, recall the derivative rule:  
+
+$$
+\frac{d}{dx}[\ln(f(x))] = \frac{f'(x)}{f(x)}
+$$  
+
+Here,  
+
+$$
+f(x) = \tan(x) + \sec(x)
+$$  
+
+Now differentiate:  
+
+$$
+\frac{dy}{dx} = \frac{d}{dx}[\ln(\tan(x) + \sec(x))]
+$$  
+
+$$
+= \frac{\sec^2(x) + \sec(x)\tan(x)}{\tan(x) + \sec(x)}
+$$  
+
+Simplify the numerator:  
+
+$$
+\frac{dy}{dx} = \frac{\sec(x)(\tan(x) + \sec(x))}{\tan(x) + \sec(x)}
+$$  
+
+Cancel terms:  
+
+$$
+\frac{dy}{dx} = \sec(x)
+$$  
+
+---
+
+## Key Takeaways
+
+- **Algebraic equations** involve polynomials and are always balanced.  
+- **Transcendental equations** involve functions like exponential, logarithmic, or trigonometric and usually require numerical solutions.  
+- Derivatives of such equations often simplify elegantly with proper application of calculus rules.  
+
+
+## Key Differences Between Algebraic and Transcendental Equations  
+
+| Feature | Algebraic Equation | Transcendental Equation |
+|---------|--------------------|--------------------------|
+| Functions Used | Polynomials only | Exponential, logarithmic, trigonometric, etc. |
+| Solutions | Often exact (closed-form) | Usually approximate (numerical methods) |
+| Example | \( x^2 - 5x + 6 = 0 \) | \( x = \cos x \) |
+
+---
+
+## Additional Understanding  
+
+- **Algebraic equations** are simpler to solve since they deal with polynomials, and exact roots can often be found using formulas (e.g., quadratic formula).  
+- **Transcendental equations** are more complex and require iterative techniques for finding approximate solutions, as exact solutions are rare.  
+- In real-life applications:  
+  - Algebraic equations appear in problems like **motion, finance, and geometry**.  
+  - Transcendental equations arise in **physics, engineering, signal processing, and control systems**.  
+
