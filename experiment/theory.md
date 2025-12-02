@@ -1,40 +1,33 @@
 ## Algebraic Equation
+An algebraic equation is a mathematical statement that shows the equality between two algebraic expressions. It generally consists of variables, constants, and coefficients, connected using arithmetic operations such as addition, subtraction, multiplication, and division.
 
-An **algebraic equation** is an equation expressed in the form:  
+A standard form of an algebraic equation is written as:
 
-$$
 P(x) = 0
-$$  
 
-where \( P(x) \) is a polynomial.  
+where 
 
-For example:  
+P(x) represents a polynomial in the variable x.
 
-$$
-x + 8 = 0
-$$  
+For example:
 
-Here, \( x + 8 \) is a polynomial, and therefore the equation is called a **polynomial equation**.  
+x + 5 = 12
 
-An algebraic equation is always **balanced**, meaning that the values on both sides of the equation are equal. It generally consists of **variables, coefficients, and constants**.  
+An equation is considered balanced when both sides have the same numerical value. To solve an equation, mathematical operations must be applied equally to both sides to maintain this balance.
 
-Consider the equation:  
+The primary objective in solving algebraic equations is to find the value(s) of the variable that satisfy the equality. These values are known as the solutions or roots of the equation.
 
-$$
-1 + 1 = 2
-$$  
+Algebraic equations can be classified based on the degree of the polynomial involved:
 
-This is balanced, since both sides have the same value. When manipulating algebraic equations, any operation performed on one side must also be performed on the other side to preserve balance.  
+Linear equations — Degree 1
 
-For example, adding 5 to both sides:  
+Quadratic equations — Degree 2
 
-$$
-1 + 1 + 5 = 2 + 5
-$$  
+Cubic equations — Degree 3
 
-The same principle applies for **subtraction, multiplication, and division**. As long as identical operations are performed on both sides, the equation remains balanced.  
+Higher degree equations — Degree 4 or more
 
-The **solution of an algebraic equation** involves finding values of the variables that satisfy the equation. Such values are called the **roots of the equation**.  
+Algebraic equations form the basis of numerous real-world mathematical models used in science, engineering, economics, and technology, helping to describe relationships and solve practical problems.
 
 ## Transcendental Equation
 
@@ -42,11 +35,6 @@ A **transcendental equation** is an equation that contains **transcendental func
 
 Unlike algebraic equations, transcendental equations typically do not have **closed-form solutions** and often require numerical or iterative methods to solve.  
 
-### Examples:
-
-$$
-x = e^{-x}, \quad x = \cos(x), \quad 2x = x^2
-$$  
 
 ## Key Differences Between Algebraic and Transcendental Equations  
 
@@ -54,7 +42,6 @@ $$
 |---------|--------------------|--------------------------|
 | Functions Used | Polynomials only | Exponential, logarithmic, trigonometric, etc. |
 | Solutions | Often exact (closed-form) | Usually approximate (numerical methods) |
-| Example | \( x^2 - 5x + 6 = 0 \) | \( x = \cos x \) |
 
 ## Insight
 
