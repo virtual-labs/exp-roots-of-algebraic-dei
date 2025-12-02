@@ -103,5 +103,74 @@
       "correctAnswer": "b",
       "difficulty": "beginner"
     }
+    {
+  "question": "Which method uses successive linear interpolation to find a root?",
+  "answers": {
+    "a": "Bisection Method",
+    "b": "Secant Method",
+    "c": "Newton-Raphson Method",
+    "d": "Gauss Elimination"
+  },
+  "explanations": {
+    "a": "Explanation: Bisection is a bracketing method, not interpolation.",
+    "b": "Explanation: Secant method approximates derivatives using interpolation.",
+    "c": "Explanation: Newton-Raphson requires derivatives.",
+    "d": "Explanation: Not a root-finding method."
+  },
+  "correctAnswer": "b",
+  "difficulty": "intermediate"
+},
+{
+  "question": "Which method requires two initial guesses that bracket the root?",
+  "answers": {
+    "a": "Secant Method",
+    "b": "Newton-Raphson Method",
+    "c": "Bisection Method",
+    "d": "Fixed Point Iteration"
+  },
+  "explanations": {
+    "a": "Explanation: Secant method does not require bracketing.",
+    "b": "Explanation: Newton-Raphson requires only one initial guess.",
+    "c": "Explanation: Bisection requires the root to be bracketed.",
+    "d": "Explanation: Fixed point does not need bracketing."
+  },
+  "correctAnswer": "c",
+  "difficulty": "intermediate"
+},
+{
+  "question": "Which of these methods may fail if the derivative becomes zero near the root?",
+  "answers": {
+    "a": "Regula Falsi Method",
+    "b": "Bisection Method",
+    "c": "Newton-Raphson Method",
+    "d": "Gauss Elimination"
+  },
+  "explanations": {
+    "a": "Explanation: Regula Falsi does not require derivatives.",
+    "b": "Explanation: Bisection always converges.",
+    "c": "Explanation: Newton-Raphson fails if f’(x) = 0.",
+    "d": "Explanation: Not related to root-finding."
+  },
+  "correctAnswer": "c",
+  "difficulty": "intermediate"
+},
+{
+  "question": "Fixed Point Iteration converges if the condition is satisfied:",
+  "answers": {
+    "a": "|g’(x)| > 1",
+    "b": "|g’(x)| < 1",
+    "c": "g(x) = 0",
+    "d": "f(a) * f(b) < 0"
+  },
+  "explanations": {
+    "a": "Explanation: This causes divergence.",
+    "b": "Explanation: Convergence requires |g’(x)| < 1.",
+    "c": "Explanation: This is not the condition for FPI convergence.",
+    "d": "Explanation: This applies to bisection."
+  },
+  "correctAnswer": "b",
+  "difficulty": "intermediate"
+}
+
   ]
 }
