@@ -102,6 +102,74 @@
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following represents a quadratic equation?",
+      "answers": {
+        "a": "2x + 5 = 0",
+        "b": "x² - 3x + 2 = 0",
+        "c": "√x + 7 = 0",
+        "d": "x³ + 1 = 0"
+      },
+      "explanations": {
+        "a": "This is a linear equation",
+        "b": "Correct, highest power of x is 2",
+        "c": "Contains a radical, not a standard polynomial form",
+        "d": "This is a cubic equation"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The solution of the equation 5x = 20 is?",
+      "answers": {
+        "a": "4",
+        "b": "5",
+        "c": "10",
+        "d": "0"
+      },
+      "explanations": {
+        "a": "Correct, 5×4 = 20",
+        "b": "Not correct, 5×5 = 25",
+        "c": "Not correct, 5×10 = 50",
+        "d": "Not correct"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The expression x³ - x is equal to zero for which of the following values of x?",
+      "answers": {
+        "a": "x = 0",
+        "b": "x = 1",
+        "c": "x = -1",
+        "d": "All of these"
+      },
+      "explanations": {
+        "a": "0³ - 0 = 0, so valid",
+        "b": "1³ - 1 = 0, so valid",
+        "c": "(-1)³ - (-1) = -1 + 1 = 0, so valid",
+        "d": "Correct"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The degree of the polynomial equation 4x⁵ - 3x² + x - 8 = 0 is?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "5",
+        "d": "8"
+      },
+      "explanations": {
+        "a": "Not correct",
+        "b": "Not correct",
+        "c": "Correct, highest power of x is 5",
+        "d": "Not correct"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
     }
   ]
 }
