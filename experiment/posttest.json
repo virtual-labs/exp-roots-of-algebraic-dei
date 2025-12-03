@@ -15,8 +15,7 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
     {
       "question": "Which of the following is also known as the Newton Raphson method?",
@@ -32,8 +31,7 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
     {
       "question": "Which of the following methods always converges but may be slower?",
@@ -49,8 +47,7 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
     {
       "question": "The Newton-Raphson method requires which of the following for iteration?",
@@ -66,8 +63,7 @@
         "c": "Explanation 3: Newton-Raphson uses both f(x) and f’(x).",
         "d": "Explanation 2"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
     },
     {
       "question": "Which of the following is NOT a bracketing method?",
@@ -83,8 +79,7 @@
         "c": "Explanation 3: Secant method is an open method, not bracketing.",
         "d": "Explanation 2"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
     },
     {
       "question": "In the Bisection Method, the root lies between two points if:",
@@ -100,8 +95,7 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
     {
       "question": "Which method uses successive linear interpolation to find a root?",
@@ -117,8 +111,7 @@
         "c": "Explanation: Newton-Raphson requires derivatives.",
         "d": "Explanation: Not a root-finding method."
       },
-      "correctAnswer": "b",
-      "difficulty": "intermediate"
+      "correctAnswer": "b"
     },
     {
       "question": "Which method requires two initial guesses that bracket the root?",
@@ -134,8 +127,7 @@
         "c": "Explanation: Bisection requires the root to be bracketed.",
         "d": "Explanation: Fixed point does not need bracketing."
       },
-      "correctAnswer": "c",
-      "difficulty": "intermediate"
+      "correctAnswer": "c"
     },
     {
       "question": "Which of these methods may fail if the derivative becomes zero near the root?",
@@ -151,8 +143,7 @@
         "c": "Explanation: Newton-Raphson fails if f’(x) = 0.",
         "d": "Explanation: Not related to root-finding."
       },
-      "correctAnswer": "c",
-      "difficulty": "intermediate"
+      "correctAnswer": "c"
     },
     {
       "question": "Fixed Point Iteration converges if the condition is satisfied:",
@@ -168,8 +159,7 @@
         "c": "Explanation: This is not the condition for FPI convergence.",
         "d": "Explanation: This applies to bisection."
       },
-      "correctAnswer": "b",
-      "difficulty": "intermediate"
+      "correctAnswer": "b"
     }
   ]
 }
