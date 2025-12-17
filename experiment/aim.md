@@ -1,4 +1,4 @@
-The primary aim of this experiment is **to determine the roots of algebraic and transcendental equations using systematic numerical methods**.  
+The aim of this experiment is **to determine the roots of algebraic and transcendental equations using systematic numerical methods**.  
 
 Algebraic equations involve polynomial expressions, and their solutions (roots) can often be found exactly or approximately, depending on the degree of the equation. In contrast, transcendental equations involve functions such as exponential, logarithmic, or trigonometric functions, which generally do not have closed-form solutions and thus require iterative or approximation techniques.  
 
