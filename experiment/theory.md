@@ -1,53 +1,60 @@
-## Algebraic Equation
-An algebraic equation is a mathematical statement that shows the equality between two algebraic expressions. It generally consists of variables, constants, and coefficients, connected using arithmetic operations such as addition, subtraction, multiplication, and division.
+## Algebraic Equations
 
-A standard form of an algebraic equation is written as:
+An **algebraic equation** is a mathematical statement that expresses the equality between two algebraic expressions composed of variables, constants, and coefficients combined through arithmetic operations such as addition, subtraction, multiplication, and division. In numerical analysis, algebraic equations are commonly expressed in the standard polynomial form:
 
-P(x) = 0
+<img width="140" height="49" alt="image" src="https://github.com/user-attachments/assets/12bc28e8-9b0c-4e61-8da8-fdd39bd64c71" />
 
-where 
+where \( P(x) \) is a polynomial function of the variable \( x \).
 
-P(x) represents a polynomial in the variable x.
+Based on the **degree of the polynomial**, algebraic equations are classified as follows:
 
-For example:
+- **Linear equation (Degree 1):**
+<img width="179" height="59" alt="image" src="https://github.com/user-attachments/assets/7dd31a56-0985-4780-a6a6-bff68763fe27" />
 
-x + 5 = 12
+- **Quadratic equation (Degree 2):**
+<img width="299" height="58" alt="image" src="https://github.com/user-attachments/assets/94b95778-0e9f-47f3-a80b-07529cce5fab" />
 
-An equation is considered balanced when both sides have the same numerical value. To solve an equation, mathematical operations must be applied equally to both sides to maintain this balance.
+- **Cubic equation (Degree 3):**
+<img width="287" height="46" alt="image" src="https://github.com/user-attachments/assets/01342387-8754-4e26-aaab-5dcd36448252" />
 
-The primary objective in solving algebraic equations is to find the value(s) of the variable that satisfy the equality. These values are known as the solutions or roots of the equation.
+- **Higher-degree equation (Degree \(\geq 4\)):**
+<img width="219" height="46" alt="image" src="https://github.com/user-attachments/assets/b9480a73-bde4-4cbd-a0f3-8d2803c7ef2e" />
 
-Algebraic equations can be classified based on the degree of the polynomial involved:
+The **solutions or roots** of an algebraic equation are the values of \( x \) for which the polynomial evaluates to zero. While exact analytical solutions exist for linear and quadratic equations, higher-degree equations often require **numerical methods** such as the **Bisection Method**, **Regula Falsi Method**, **Newton–Raphson Method**, or **Secant Method** to approximate the roots.
 
-Linear equations — Degree 1
+---
 
-Quadratic equations — Degree 2
+## Transcendental Equations
 
-Cubic equations — Degree 3
+A **transcendental equation** is an equation that involves **non-polynomial functions**, such as exponential, logarithmic, trigonometric, or inverse trigonometric functions. These equations cannot be reduced to polynomial form and therefore do not generally admit closed-form analytical solutions.
 
-Higher degree equations — Degree 4 or more
+A typical transcendental equation is written as:
 
-Algebraic equations form the basis of numerous real-world mathematical models used in science, engineering, economics, and technology, helping to describe relationships and solve practical problems.
+<img width="163" height="47" alt="image" src="https://github.com/user-attachments/assets/3164835d-4372-41af-9bf9-e135d4b94dda" />
 
-## Transcendental Equation
+where \( f(x) \) contains transcendental terms.
 
-A **transcendental equation** is an equation that contains **transcendental functions** such as exponential, logarithmic, trigonometric, or inverse trigonometric functions.  
+### Examples of Transcendental Equations
 
-Unlike algebraic equations, transcendental equations typically do not have **closed-form solutions** and often require numerical or iterative methods to solve.  
+- Exponential equation:
+<img width="166" height="46" alt="image" src="https://github.com/user-attachments/assets/d7806bf4-33ec-4f9d-8928-2eb458910fd9" />
 
 
-## Key Differences Between Algebraic and Transcendental Equations  
+- Trigonometric equation:
+<img width="218" height="62" alt="image" src="https://github.com/user-attachments/assets/ae91575c-c94f-426f-8fd4-5961dcc5e3d9" />
 
-| Feature | Algebraic Equation | Transcendental Equation |
-|---------|--------------------|--------------------------|
-| Functions Used | Polynomials only | Exponential, logarithmic, trigonometric, etc. |
-| Solutions | Often exact (closed-form) | Usually approximate (numerical methods) |
 
-## Insight
+Such equations are frequently encountered in **physics, engineering, control systems, and signal processing**, particularly in problems involving oscillatory motion, heat transfer, and system stability. Since exact solutions are rarely available, **iterative numerical techniques** are essential for approximating their roots.
 
-- **Algebraic equations** are simpler to solve since they deal with polynomials, and exact roots can often be found using formulas (e.g., quadratic formula).  
-- **Transcendental equations** are more complex and require iterative techniques for finding approximate solutions, as exact solutions are rare.  
-- In real-life applications:  
-  - Algebraic equations appear in problems like **motion, finance, and geometry**.  
-  - Transcendental equations arise in **physics, engineering, signal processing, and control systems**.  
+---
 
+## Numerical Perspective and Relevance
+
+Both algebraic and transcendental equations play a critical role in **scientific computing and numerical analysis**. The objective of numerical root-finding methods is to **iteratively approximate solutions** by starting from an initial guess or interval and refining it until a specified level of accuracy is achieved.
+
+In this experiment, numerical methods are applied to:
+
+- Identify approximate roots of **algebraic equations of different degrees**, and  
+- Determine numerical solutions for **transcendental equations**, where analytical approaches are not feasible.
+
+Understanding the nature of the equation—whether algebraic or transcendental—is essential for selecting an appropriate numerical method and for interpreting the **convergence behavior, accuracy, and stability** of the obtained solution.
