@@ -160,6 +160,91 @@
         "d": "Explanation: This applies to bisection."
       },
       "correctAnswer": "b"
+    },
+
+    // -------------------------
+    // NEW ADVANCED QUESTIONS
+    // -------------------------
+
+    {
+      "question": "For the function f(x) = x^3 - 5x + 1, which numerical method is most efficient if the derivative is easily computable and the initial guess is close to the actual root?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Regula Falsi Method",
+        "c": "Newton-Raphson Method",
+        "d": "Secant Method"
+      },
+      "explanations": {
+        "a": "Bisection is robust but slow.",
+        "b": "Regula Falsi is slower for nonlinear curvature.",
+        "c": "Newton-Raphson converges fastest when the derivative is easy to compute.",
+        "d": "Secant is slower than Newton-Raphson."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which of the following conditions may cause the Secant Method to diverge?",
+      "answers": {
+        "a": "The two initial guesses are too close.",
+        "b": "The derivative at the root is zero.",
+        "c": "The function is highly oscillatory.",
+        "d": "All of the above"
+      },
+      "explanations": {
+        "a": "Close guesses may cause poor slope approximation.",
+        "b": "Secant fails near flat slopes.",
+        "c": "Oscillatory functions may cause instability.",
+        "d": "All options contribute to divergence."
+      },
+      "correctAnswer": "d"
+    },
+    {
+      "question": "The order of convergence of the Newton-Raphson method is:",
+      "answers": {
+        "a": "Linear",
+        "b": "Superlinear",
+        "c": "Quadratic",
+        "d": "Cubic"
+      },
+      "explanations": {
+        "a": "Not correct.",
+        "b": "Faster than linear but not the fastest.",
+        "c": "Correct: Newton-Raphson has quadratic convergence.",
+        "d": "No standard root-finding method has cubic convergence."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "For a transcendental equation like sin(x) = x/3, which method is preferred if the derivative becomes very small near the root?",
+      "answers": {
+        "a": "Newton-Raphson Method",
+        "b": "Secant Method",
+        "c": "Bisection Method",
+        "d": "Fixed Point Iteration"
+      },
+      "explanations": {
+        "a": "Derivative near zero causes failure.",
+        "b": "Secant may still struggle with flat slopes.",
+        "c": "Bisection guarantees convergence regardless of slope.",
+        "d": "FPI may or may not converge."
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which numerical method is MOST sensitive to the choice of the initial guess?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Regula Falsi Method",
+        "c": "Newton-Raphson Method",
+        "d": "False Position Method"
+      },
+      "explanations": {
+        "a": "Bisection does not depend on guess.",
+        "b": "Regula Falsi only depends on bracket.",
+        "c": "Newton-Raphson can diverge with a poor guess.",
+        "d": "False Position relies on bracketing, not guess."
+      },
+      "correctAnswer": "c"
     }
   ]
 }
