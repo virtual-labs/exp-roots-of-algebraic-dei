@@ -170,6 +170,96 @@
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+
+    /* -----------------------------
+       ADVANCED QUESTIONS ADDED BELOW
+       ----------------------------- */
+
+    {
+      "question": "For the equation f(x) = e^{-x} - x, which numerical method is generally most efficient if the derivative is easy to compute and the initial guess is close to the actual root?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Regula Falsi Method",
+        "c": "Newton-Raphson Method",
+        "d": "Secant Method"
+      },
+      "explanations": {
+        "a": "Bisection is robust but slow.",
+        "b": "Regula Falsi can be slower for curved functions.",
+        "c": "Correct: Newton-Raphson converges fastest when derivative is simple.",
+        "d": "Secant is faster than bisection but slower than Newton-Raphson."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which of the following is a condition that guarantees the Bisection Method will converge?",
+      "answers": {
+        "a": "f(a) * f(b) > 0",
+        "b": "f(a) * f(b) < 0",
+        "c": "f(a) = f(b)",
+        "d": "f(a) and f(b) are both zero"
+      },
+      "explanations": {
+        "a": "This means no root is guaranteed.",
+        "b": "Correct: Opposite signs guarantee a root between a and b.",
+        "c": "This does not ensure a bracket.",
+        "d": "This is trivial but not the general condition."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "The Secant Method may diverge if:",
+      "answers": {
+        "a": "The initial guesses are very close.",
+        "b": "The derivative near the root is zero.",
+        "c": "The function is highly oscillatory.",
+        "d": "All of these"
+      },
+      "explanations": {
+        "a": "Close guesses may give poor slope approximation.",
+        "b": "Flat slopes cause instability.",
+        "c": "Oscillations cause divergence.",
+        "d": "Correct: All factors can cause divergence."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "The order of convergence of the Newton-Raphson Method is:",
+      "answers": {
+        "a": "Linear",
+        "b": "Superlinear",
+        "c": "Quadratic",
+        "d": "Cubic"
+      },
+      "explanations": {
+        "a": "Too slow for Newton method.",
+        "b": "Not exact.",
+        "c": "Correct: Newton-Raphson has quadratic convergence.",
+        "d": "No classical root method is cubic."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which numerical method is MOST sensitive to the choice of the initial guess?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Regula Falsi Method",
+        "c": "Newton-Raphson Method",
+        "d": "False Position Method"
+      },
+      "explanations": {
+        "a": "Bisection does not depend on initial guess.",
+        "b": "Depends only on bracket, not guess.",
+        "c": "Correct: Newton-Raphson diverges for a poor guess.",
+        "d": "False position is bracket based."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
     }
   ]
 }
