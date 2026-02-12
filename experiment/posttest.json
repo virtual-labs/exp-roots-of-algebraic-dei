@@ -2,249 +2,104 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which of the following is an iterative method?",
+      "question": "Which interpolation method uses polynomials that pass through all given data points to estimate intermediate values?",
       "answers": {
-        "a": "Gauss Seidel",
-        "b": "Factorization",
-        "c": "Gauss Jordan",
-        "d": "Gauss Elimination"
+        "a": "Linear Interpolation",
+        "b": "Lagrange Interpolation",
+        "c": "Newton's Divided Differences",
+        "d": "None of the above"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Given the points (1, 2) and (3, 6), what is the interpolated value of y at x=2 using Linear Interpolation?",
+      "answers": {
+        "a": "3",
+        "b": "4",
+        "c": "5",
+        "d": "6"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Interpolation is mainly used to:",
+      "answers": {
+        "a": "Estimate values between known data points",
+        "b": "Estimate values outside the given data range",
+        "c": "Solve differential equations",
+        "d": "Find maximum and minimum values"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "Which of the following is also known as the Newton Raphson method?",
+      "question": "Which of the following interpolation methods is most suitable for evenly spaced data points?",
       "answers": {
-        "a": "Chord Method",
-        "b": "Tangent Method",
-        "c": "Diameter Method",
-        "d": "Secant Method"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "Which of the following methods always converges but may be slower?",
-      "answers": {
-        "a": "Bisection Method",
-        "b": "Newton-Raphson Method",
-        "c": "Secant Method",
-        "d": "Regula Falsi Method"
-      },
-      "explanations": {
-        "a": "Explanation 1: Bisection is guaranteed to converge but slowly.",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Newton’s Forward Interpolation",
+        "b": "Lagrange Interpolation",
+        "c": "Newton’s Divided Difference",
+        "d": "Cubic Spline"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "The Newton-Raphson method requires which of the following for iteration?",
+      "question": "What type of error typically increases with higher-order polynomial interpolation?",
       "answers": {
-        "a": "Only function values",
-        "b": "Only derivative values",
-        "c": "Both function and derivative values",
-        "d": "No values required"
-      },
-      "explanations": {
-        "a": "Explanation 1",
-        "b": "Explanation 2",
-        "c": "Explanation 3: Newton-Raphson uses both f(x) and f’(x).",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c"
-    },
-    {
-      "question": "Which of the following is NOT a bracketing method?",
-      "answers": {
-        "a": "Bisection Method",
-        "b": "Regula Falsi Method",
-        "c": "Secant Method",
-        "d": "False Position Method"
-      },
-      "explanations": {
-        "a": "Explanation 1",
-        "b": "Explanation 2",
-        "c": "Explanation 3: Secant method is an open method, not bracketing.",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c"
-    },
-    {
-      "question": "In the Bisection Method, the root lies between two points if:",
-      "answers": {
-        "a": "f(a) * f(b) > 0",
-        "b": "f(a) * f(b) < 0",
-        "c": "f(a) = f(b)",
-        "d": "f(a) + f(b) = 0"
-      },
-      "explanations": {
-        "a": "Explanation 1",
-        "b": "Explanation 2: If f(a) and f(b) have opposite signs, a root exists between them.",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Round-off error",
+        "b": "Runge’s phenomenon (oscillations)",
+        "c": "Truncation error",
+        "d": "No error occurs"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Which method uses successive linear interpolation to find a root?",
+      "question": "Which input values are essential for performing interpolation?",
       "answers": {
-        "a": "Bisection Method",
-        "b": "Secant Method",
-        "c": "Newton-Raphson Method",
-        "d": "Gauss Elimination"
+        "a": "Only y-values",
+        "b": "Only x-values",
+        "c": "Both x and y values",
+        "d": "Derivative values"
       },
-      "explanations": {
-        "a": "Explanation: Bisection is a bracketing method, not interpolation.",
-        "b": "Explanation: Secant method approximates derivatives using interpolation.",
-        "c": "Explanation: Newton-Raphson requires derivatives.",
-        "d": "Explanation: Not a root-finding method."
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which interpolation technique fits a smooth curve through the given points using piecewise polynomials?",
+      "answers": {
+        "a": "Linear Interpolation",
+        "b": "Cubic Spline Interpolation",
+        "c": "Lagrange Interpolation",
+        "d": "Forward Difference Method"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Which method requires two initial guesses that bracket the root?",
+      "question": "Newton’s Divided Difference interpolation method is mainly used for:",
       "answers": {
-        "a": "Secant Method",
-        "b": "Newton-Raphson Method",
-        "c": "Bisection Method",
-        "d": "Fixed Point Iteration"
-      },
-      "explanations": {
-        "a": "Explanation: Secant method does not require bracketing.",
-        "b": "Explanation: Newton-Raphson requires only one initial guess.",
-        "c": "Explanation: Bisection requires the root to be bracketed.",
-        "d": "Explanation: Fixed point does not need bracketing."
-      },
-      "correctAnswer": "c"
-    },
-    {
-      "question": "Which of these methods may fail if the derivative becomes zero near the root?",
-      "answers": {
-        "a": "Regula Falsi Method",
-        "b": "Bisection Method",
-        "c": "Newton-Raphson Method",
-        "d": "Gauss Elimination"
-      },
-      "explanations": {
-        "a": "Explanation: Regula Falsi does not require derivatives.",
-        "b": "Explanation: Bisection always converges.",
-        "c": "Explanation: Newton-Raphson fails if f’(x) = 0.",
-        "d": "Explanation: Not related to root-finding."
-      },
-      "correctAnswer": "c"
-    },
-    {
-      "question": "Fixed Point Iteration converges if the condition is satisfied:",
-      "answers": {
-        "a": "|g’(x)| > 1",
-        "b": "|g’(x)| < 1",
-        "c": "g(x) = 0",
-        "d": "f(a) * f(b) < 0"
-      },
-      "explanations": {
-        "a": "Explanation: This causes divergence.",
-        "b": "Explanation: Convergence requires |g’(x)| < 1.",
-        "c": "Explanation: This is not the condition for FPI convergence.",
-        "d": "Explanation: This applies to bisection."
+        "a": "Equally spaced data only",
+        "b": "Randomly spaced (uneven) data points",
+        "c": "Trigonometric functions",
+        "d": "None of the above"
       },
       "correctAnswer": "b"
     },
-
-    // -------------------------
-    // NEW ADVANCED QUESTIONS
-    // -------------------------
-
     {
-      "question": "For the function f(x) = x^3 - 5x + 1, which numerical method is most efficient if the derivative is easily computable and the initial guess is close to the actual root?",
+      "question": "Which term in interpolation represents the error between the actual function and the interpolated function?",
       "answers": {
-        "a": "Bisection Method",
-        "b": "Regula Falsi Method",
-        "c": "Newton-Raphson Method",
-        "d": "Secant Method"
-      },
-      "explanations": {
-        "a": "Bisection is robust but slow.",
-        "b": "Regula Falsi is slower for nonlinear curvature.",
-        "c": "Newton-Raphson converges fastest when the derivative is easy to compute.",
-        "d": "Secant is slower than Newton-Raphson."
+        "a": "Interpolation polynomial",
+        "b": "Newton coefficient",
+        "c": "Remainder term",
+        "d": "Basis polynomial"
       },
       "correctAnswer": "c"
     },
     {
-      "question": "Which of the following conditions may cause the Secant Method to diverge?",
+      "question": "Which of the following is a limitation of polynomial interpolation?",
       "answers": {
-        "a": "The two initial guesses are too close.",
-        "b": "The derivative at the root is zero.",
-        "c": "The function is highly oscillatory.",
-        "d": "All of the above"
+        "a": "Only works for linear data",
+        "b": "Oscillations occur for large number of points",
+        "c": "It cannot estimate values between points",
+        "d": "Requires derivatives"
       },
-      "explanations": {
-        "a": "Close guesses may cause poor slope approximation.",
-        "b": "Secant fails near flat slopes.",
-        "c": "Oscillatory functions may cause instability.",
-        "d": "All options contribute to divergence."
-      },
-      "correctAnswer": "d"
-    },
-    {
-      "question": "The order of convergence of the Newton-Raphson method is:",
-      "answers": {
-        "a": "Linear",
-        "b": "Superlinear",
-        "c": "Quadratic",
-        "d": "Cubic"
-      },
-      "explanations": {
-        "a": "Not correct.",
-        "b": "Faster than linear but not the fastest.",
-        "c": "Correct: Newton-Raphson has quadratic convergence.",
-        "d": "No standard root-finding method has cubic convergence."
-      },
-      "correctAnswer": "c"
-    },
-    {
-      "question": "For a transcendental equation like sin(x) = x/3, which method is preferred if the derivative becomes very small near the root?",
-      "answers": {
-        "a": "Newton-Raphson Method",
-        "b": "Secant Method",
-        "c": "Bisection Method",
-        "d": "Fixed Point Iteration"
-      },
-      "explanations": {
-        "a": "Derivative near zero causes failure.",
-        "b": "Secant may still struggle with flat slopes.",
-        "c": "Bisection guarantees convergence regardless of slope.",
-        "d": "FPI may or may not converge."
-      },
-      "correctAnswer": "c"
-    },
-    {
-      "question": "Which numerical method is MOST sensitive to the choice of the initial guess?",
-      "answers": {
-        "a": "Bisection Method",
-        "b": "Regula Falsi Method",
-        "c": "Newton-Raphson Method",
-        "d": "False Position Method"
-      },
-      "explanations": {
-        "a": "Bisection does not depend on guess.",
-        "b": "Regula Falsi only depends on bracket.",
-        "c": "Newton-Raphson can diverge with a poor guess.",
-        "d": "False Position relies on bracketing, not guess."
-      },
-      "correctAnswer": "c"
+      "correctAnswer": "b"
     }
   ]
 }
