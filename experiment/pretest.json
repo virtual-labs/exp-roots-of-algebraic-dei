@@ -2,264 +2,104 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "The value of x² + y² when x = 1, y = 2 is",
+      "question": "Which interpolation method uses polynomials that pass through all given data points to estimate intermediate values?",
       "answers": {
-        "a": "1",
-        "b": "2",
-        "c": "4",
-        "d": "5"
+        "a": "Linear Interpolation",
+        "b": "Lagrange Interpolation",
+        "c": "Newton's Divided Differences",
+        "d": "None of the above"
       },
-      "explanations": {
-        "a": "x² + y² = 1² + 2² = 1 + 4 = 5, not 1",
-        "b": "x² + y² = 1 + 4 = 5, not 2",
-        "c": "x² + y² = 1 + 4 = 5, not 4",
-        "d": "Correct, since 1² + 2² = 5"
-      },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
     {
-      "question": "The value of x² – xy + y² when x = 0, y = 1 is?",
+      "question": "Given the points (1, 2) and (3, 6), what is the interpolated value of y at x=2 using Linear Interpolation?",
       "answers": {
-        "a": "0",
-        "b": "-1",
-        "c": "1",
-        "d": "None of these"
-      },
-      "explanations": {
-        "a": "Substitute: 0² – 0×1 + 1² = 1, not 0",
-        "b": "Substitute: 1, not -1",
-        "c": "Correct, since result is 1",
-        "d": "Not applicable"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Which of the following is a root of the equation x² – 4 = 0?",
-      "answers": {
-        "a": "2",
-        "b": "-2",
-        "c": "Both a and b",
-        "d": "None of these"
-      },
-      "explanations": {
-        "a": "2 is a root since 2² – 4 = 0",
-        "b": "-2 is also a root since (-2)² – 4 = 0",
-        "c": "Correct, both 2 and -2 are roots",
-        "d": "Not correct"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "The equation sin(x) = 0 has which of the following roots?",
-      "answers": {
-        "a": "x = 0",
-        "b": "x = π",
-        "c": "x = 2π",
-        "d": "All of these"
-      },
-      "explanations": {
-        "a": "sin(0) = 0, so root exists",
-        "b": "sin(π) = 0, so root exists",
-        "c": "sin(2π) = 0, so root exists",
-        "d": "Correct, all values are roots"
-      },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "The number of real roots of the equation e^x = 0 is?",
-      "answers": {
-        "a": "0",
-        "b": "1",
-        "c": "2",
-        "d": "Infinite"
-      },
-      "explanations": {
-        "a": "Correct, e^x > 0 for all real x, so no real root exists",
-        "b": "Not correct, e^x never becomes 0",
-        "c": "Not correct",
-        "d": "Not correct"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "The root of the linear equation 3x + 6 = 0 is?",
-      "answers": {
-        "a": "-2",
-        "b": "2",
-        "c": "0",
-        "d": "None of these"
-      },
-      "explanations": {
-        "a": "Correct, since 3(-2) + 6 = 0",
-        "b": "Not correct, 3(2) + 6 = 12",
-        "c": "Not correct, 3(0) + 6 = 6",
-        "d": "Not applicable"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Which of the following represents a quadratic equation?",
-      "answers": {
-        "a": "2x + 5 = 0",
-        "b": "x² - 3x + 2 = 0",
-        "c": "√x + 7 = 0",
-        "d": "x³ + 1 = 0"
-      },
-      "explanations": {
-        "a": "This is a linear equation",
-        "b": "Correct, highest power of x is 2",
-        "c": "Contains a radical, not a standard polynomial form",
-        "d": "This is a cubic equation"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "The solution of the equation 5x = 20 is?",
-      "answers": {
-        "a": "4",
-        "b": "5",
-        "c": "10",
-        "d": "0"
-      },
-      "explanations": {
-        "a": "Correct, 5×4 = 20",
-        "b": "Not correct, 5×5 = 25",
-        "c": "Not correct, 5×10 = 50",
-        "d": "Not correct"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "The expression x³ - x is equal to zero for which of the following values of x?",
-      "answers": {
-        "a": "x = 0",
-        "b": "x = 1",
-        "c": "x = -1",
-        "d": "All of these"
-      },
-      "explanations": {
-        "a": "0³ - 0 = 0, so valid",
-        "b": "1³ - 1 = 0, so valid",
-        "c": "(-1)³ - (-1) = -1 + 1 = 0, so valid",
-        "d": "Correct"
-      },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "The degree of the polynomial equation 4x⁵ - 3x² + x - 8 = 0 is?",
-      "answers": {
-        "a": "1",
-        "b": "2",
+        "a": "3",
+        "b": "4",
         "c": "5",
-        "d": "8"
+        "d": "6"
       },
-      "explanations": {
-        "a": "Not correct",
-        "b": "Not correct",
-        "c": "Correct, highest power of x is 5",
-        "d": "Not correct"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-
-    /* -----------------------------
-       ADVANCED QUESTIONS ADDED BELOW
-       ----------------------------- */
-
-    {
-      "question": "For the equation f(x) = e^{-x} - x, which numerical method is generally most efficient if the derivative is easy to compute and the initial guess is close to the actual root?",
-      "answers": {
-        "a": "Bisection Method",
-        "b": "Regula Falsi Method",
-        "c": "Newton-Raphson Method",
-        "d": "Secant Method"
-      },
-      "explanations": {
-        "a": "Bisection is robust but slow.",
-        "b": "Regula Falsi can be slower for curved functions.",
-        "c": "Correct: Newton-Raphson converges fastest when derivative is simple.",
-        "d": "Secant is faster than bisection but slower than Newton-Raphson."
-      },
-      "correctAnswer": "c",
-      "difficulty": "advanced"
+      "correctAnswer": "b"
     },
     {
-      "question": "Which of the following is a condition that guarantees the Bisection Method will converge?",
+      "question": "Interpolation is mainly used to:",
       "answers": {
-        "a": "f(a) * f(b) > 0",
-        "b": "f(a) * f(b) < 0",
-        "c": "f(a) = f(b)",
-        "d": "f(a) and f(b) are both zero"
+        "a": "Estimate values between known data points",
+        "b": "Estimate values outside the given data range",
+        "c": "Solve differential equations",
+        "d": "Find maximum and minimum values"
       },
-      "explanations": {
-        "a": "This means no root is guaranteed.",
-        "b": "Correct: Opposite signs guarantee a root between a and b.",
-        "c": "This does not ensure a bracket.",
-        "d": "This is trivial but not the general condition."
-      },
-      "correctAnswer": "b",
-      "difficulty": "advanced"
+      "correctAnswer": "a"
     },
     {
-      "question": "The Secant Method may diverge if:",
+      "question": "Which of the following interpolation methods is most suitable for evenly spaced data points?",
       "answers": {
-        "a": "The initial guesses are very close.",
-        "b": "The derivative near the root is zero.",
-        "c": "The function is highly oscillatory.",
-        "d": "All of these"
+        "a": "Newton’s Forward Interpolation",
+        "b": "Lagrange Interpolation",
+        "c": "Newton’s Divided Difference",
+        "d": "Cubic Spline"
       },
-      "explanations": {
-        "a": "Close guesses may give poor slope approximation.",
-        "b": "Flat slopes cause instability.",
-        "c": "Oscillations cause divergence.",
-        "d": "Correct: All factors can cause divergence."
-      },
-      "correctAnswer": "d",
-      "difficulty": "advanced"
+      "correctAnswer": "a"
     },
     {
-      "question": "The order of convergence of the Newton-Raphson Method is:",
+      "question": "What type of error typically increases with higher-order polynomial interpolation?",
       "answers": {
-        "a": "Linear",
-        "b": "Superlinear",
-        "c": "Quadratic",
-        "d": "Cubic"
+        "a": "Round-off error",
+        "b": "Runge’s phenomenon (oscillations)",
+        "c": "Truncation error",
+        "d": "No error occurs"
       },
-      "explanations": {
-        "a": "Too slow for Newton method.",
-        "b": "Not exact.",
-        "c": "Correct: Newton-Raphson has quadratic convergence.",
-        "d": "No classical root method is cubic."
-      },
-      "correctAnswer": "c",
-      "difficulty": "advanced"
+      "correctAnswer": "b"
     },
     {
-      "question": "Which numerical method is MOST sensitive to the choice of the initial guess?",
+      "question": "Which input values are essential for performing interpolation?",
       "answers": {
-        "a": "Bisection Method",
-        "b": "Regula Falsi Method",
-        "c": "Newton-Raphson Method",
-        "d": "False Position Method"
+        "a": "Only y-values",
+        "b": "Only x-values",
+        "c": "Both x and y values",
+        "d": "Derivative values"
       },
-      "explanations": {
-        "a": "Bisection does not depend on initial guess.",
-        "b": "Depends only on bracket, not guess.",
-        "c": "Correct: Newton-Raphson diverges for a poor guess.",
-        "d": "False position is bracket based."
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which interpolation technique fits a smooth curve through the given points using piecewise polynomials?",
+      "answers": {
+        "a": "Linear Interpolation",
+        "b": "Cubic Spline Interpolation",
+        "c": "Lagrange Interpolation",
+        "d": "Forward Difference Method"
       },
-      "correctAnswer": "c",
-      "difficulty": "advanced"
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Newton’s Divided Difference interpolation method is mainly used for:",
+      "answers": {
+        "a": "Equally spaced data only",
+        "b": "Randomly spaced (uneven) data points",
+        "c": "Trigonometric functions",
+        "d": "None of the above"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Which term in interpolation represents the error between the actual function and the interpolated function?",
+      "answers": {
+        "a": "Interpolation polynomial",
+        "b": "Newton coefficient",
+        "c": "Remainder term",
+        "d": "Basis polynomial"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which of the following is a limitation of polynomial interpolation?",
+      "answers": {
+        "a": "Only works for linear data",
+        "b": "Oscillations occur for large number of points",
+        "c": "It cannot estimate values between points",
+        "d": "Requires derivatives"
+      },
+      "correctAnswer": "b"
     }
   ]
 }
