@@ -2,102 +2,102 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which interpolation method uses polynomials that pass through all given data points to estimate intermediate values?",
+      "question": "A root of an equation f(x) = 0 is defined as:",
       "answers": {
-        "a": "Linear Interpolation",
-        "b": "Lagrange Interpolation",
-        "c": "Newton's Divided Differences",
-        "d": "None of the above"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "Given the points (1, 2) and (3, 6), what is the interpolated value of y at x=2 using Linear Interpolation?",
-      "answers": {
-        "a": "3",
-        "b": "4",
-        "c": "5",
-        "d": "6"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "Interpolation is mainly used to:",
-      "answers": {
-        "a": "Estimate values between known data points",
-        "b": "Estimate values outside the given data range",
-        "c": "Solve differential equations",
-        "d": "Find maximum and minimum values"
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "Which of the following interpolation methods is most suitable for evenly spaced data points?",
-      "answers": {
-        "a": "Newton’s Forward Interpolation",
-        "b": "Lagrange Interpolation",
-        "c": "Newton’s Divided Difference",
-        "d": "Cubic Spline"
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "What type of error typically increases with higher-order polynomial interpolation?",
-      "answers": {
-        "a": "Round-off error",
-        "b": "Runge’s phenomenon (oscillations)",
-        "c": "Truncation error",
-        "d": "No error occurs"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "Which input values are essential for performing interpolation?",
-      "answers": {
-        "a": "Only y-values",
-        "b": "Only x-values",
-        "c": "Both x and y values",
-        "d": "Derivative values"
+        "a": "The maximum value of the function",
+        "b": "The value of x for which f(x) = 1",
+        "c": "The value of x for which f(x) = 0",
+        "d": "The slope of the function"
       },
       "correctAnswer": "c"
     },
     {
-      "question": "Which interpolation technique fits a smooth curve through the given points using piecewise polynomials?",
+      "question": "Which of the following is a transcendental equation?",
       "answers": {
-        "a": "Linear Interpolation",
-        "b": "Cubic Spline Interpolation",
-        "c": "Lagrange Interpolation",
-        "d": "Forward Difference Method"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "Newton’s Divided Difference interpolation method is mainly used for:",
-      "answers": {
-        "a": "Equally spaced data only",
-        "b": "Randomly spaced (uneven) data points",
-        "c": "Trigonometric functions",
-        "d": "None of the above"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "Which term in interpolation represents the error between the actual function and the interpolated function?",
-      "answers": {
-        "a": "Interpolation polynomial",
-        "b": "Newton coefficient",
-        "c": "Remainder term",
-        "d": "Basis polynomial"
+        "a": "x^2 - 4 = 0",
+        "b": "3x + 5 = 0",
+        "c": "sin(x) - x = 0",
+        "d": "2x^3 + 7 = 0"
       },
       "correctAnswer": "c"
     },
     {
-      "question": "Which of the following is a limitation of polynomial interpolation?",
+      "question": "The equation x^2 - 9 = 0 has how many real roots?",
       "answers": {
-        "a": "Only works for linear data",
-        "b": "Oscillations occur for large number of points",
-        "c": "It cannot estimate values between points",
-        "d": "Requires derivatives"
+        "a": "0",
+        "b": "1",
+        "c": "2",
+        "d": "3"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which method requires the function to change sign over an interval [a, b]?",
+      "answers": {
+        "a": "Newton-Raphson Method",
+        "b": "Bisection Method",
+        "c": "Secant Method",
+        "d": "Fixed Point Iteration"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The Newton-Raphson method requires knowledge of:",
+      "answers": {
+        "a": "Only the function value",
+        "b": "Only two initial guesses",
+        "c": "The derivative of the function",
+        "d": "The integral of the function"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which of the following equations cannot generally be solved exactly using algebraic methods?",
+      "answers": {
+        "a": "x^2 - 5x + 6 = 0",
+        "b": "e^x - x = 0",
+        "c": "2x - 3 = 0",
+        "d": "x^3 - 1 = 0"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "If f(a) and f(b) have the same sign, then the Bisection method:",
+      "answers": {
+        "a": "Guarantees a root in the interval",
+        "b": "Cannot be applied directly",
+        "c": "Always converges faster",
+        "d": "Finds complex roots"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The equation e^x = 0 has:",
+      "answers": {
+        "a": "One real root",
+        "b": "Two real roots",
+        "c": "Infinite real roots",
+        "d": "No real roots"
+      },
+      "correctAnswer": "d"
+    },
+    {
+      "question": "Which numerical method is generally faster in convergence when the initial guess is close to the root?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Regula Falsi Method",
+        "c": "Newton-Raphson Method",
+        "d": "Graphical Method"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "An algebraic equation differs from a transcendental equation because it:",
+      "answers": {
+        "a": "Contains trigonometric or exponential functions",
+        "b": "Contains only polynomial terms",
+        "c": "Has no real roots",
+        "d": "Always requires numerical methods"
       },
       "correctAnswer": "b"
     }
