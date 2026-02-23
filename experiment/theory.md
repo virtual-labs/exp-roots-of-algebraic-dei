@@ -36,12 +36,10 @@ where \( f(x) \) contains transcendental terms.
 
 ### Examples of Transcendental Equations
 
-- Exponential equation:
-<img width="166" height="46" alt="image" src="https://github.com/user-attachments/assets/d7806bf4-33ec-4f9d-8928-2eb458910fd9" />
+<img width="951" height="402" alt="image" src="https://github.com/user-attachments/assets/467a0974-7932-4f39-9afc-c461d1c0c47a" />
 
 
-- Trigonometric equation:
-<img width="218" height="62" alt="image" src="https://github.com/user-attachments/assets/ae91575c-c94f-426f-8fd4-5961dcc5e3d9" />
+<img width="1041" height="458" alt="image" src="https://github.com/user-attachments/assets/a5b098b0-daef-49a5-94bc-ea90555fe4aa" />
 
 
 Such equations are frequently encountered in **physics, engineering, control systems, and signal processing**, particularly in problems involving oscillatory motion, heat transfer, and system stability. Since exact solutions are rarely available, **iterative numerical techniques** are essential for approximating their roots.
