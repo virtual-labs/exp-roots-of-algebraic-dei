@@ -2,38 +2,104 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "A root of an equation f(x) = 0 is defined as:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The maximum value of the function",
+        "b": "The value of x for which f(x) = 1",
+        "c": "The value of x for which f(x) = 0",
+        "d": "The slope of the function"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following is a transcendental equation?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "x^2 - 4 = 0",
+        "b": "3x + 5 = 0",
+        "c": "sin(x) - x = 0",
+        "d": "2x^3 + 7 = 0"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "c"
+    },
+    {
+      "question": "The equation x^2 - 9 = 0 has how many real roots?",
+      "answers": {
+        "a": "0",
+        "b": "1",
+        "c": "2",
+        "d": "3"
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which method requires the function to change sign over an interval [a, b]?",
+      "answers": {
+        "a": "Newton-Raphson Method",
+        "b": "Bisection Method",
+        "c": "Secant Method",
+        "d": "Fixed Point Iteration"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The Newton-Raphson method requires knowledge of:",
+      "answers": {
+        "a": "Only the function value",
+        "b": "Only two initial guesses",
+        "c": "The derivative of the function",
+        "d": "The integral of the function"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "Which of the following equations cannot generally be solved exactly using algebraic methods?",
+      "answers": {
+        "a": "x^2 - 5x + 6 = 0",
+        "b": "e^x - x = 0",
+        "c": "2x - 3 = 0",
+        "d": "x^3 - 1 = 0"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "If f(a) and f(b) have the same sign, then the Bisection method:",
+      "answers": {
+        "a": "Guarantees a root in the interval",
+        "b": "Cannot be applied directly",
+        "c": "Always converges faster",
+        "d": "Finds complex roots"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The equation e^x = 0 has:",
+      "answers": {
+        "a": "One real root",
+        "b": "Two real roots",
+        "c": "Infinite real roots",
+        "d": "No real roots"
+      },
+      "correctAnswer": "d"
+    },
+    {
+      "question": "Which numerical method is generally faster in convergence when the initial guess is close to the root?",
+      "answers": {
+        "a": "Bisection Method",
+        "b": "Regula Falsi Method",
+        "c": "Newton-Raphson Method",
+        "d": "Graphical Method"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "An algebraic equation differs from a transcendental equation because it:",
+      "answers": {
+        "a": "Contains trigonometric or exponential functions",
+        "b": "Contains only polynomial terms",
+        "c": "Has no real roots",
+        "d": "Always requires numerical methods"
+      },
+      "correctAnswer": "b"
     }
   ]
 }
