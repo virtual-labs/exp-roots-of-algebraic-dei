@@ -7,5 +7,5 @@
 ### Developers
 | SNo. | Name | Email | Institute | Department |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | Aditya Vardhan | aditya202202@dei.ac.in | Dayalbagh Educational Institute | Physics and Computer Science |
-| 2 | Mohit Yadav | mohit173333@dei.ac.in | Dayalbagh Educational Institute | Physics and Computer Science |
+| 1 | Aditya Vardhan | vardhana3098@gmail.com  | Dayalbagh Educational Institute | Physics and Computer Science |
+| 2 | Mohit Yadav | mohityadavdei@yahoo.com  | Dayalbagh Educational Institute | Physics and Computer Science |
