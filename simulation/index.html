@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Equation Root Finder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: calc(100vh - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            text-align: center;
+            color: #ffffff;
+            background-color: #2c3e50;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            font-size: 1.1em;
+        }
+
+        /* 2-col default, 3-col when pitfall is active */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            flex: 1;
+            min-height: 0;
+            transition: grid-template-columns 0.3s ease;
+        }
+        .grid-container.has-pitfall {
+            grid-template-columns: 1fr 1fr 300px;
+        }
+
+        .box {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .box-title {
+            text-align: center;
+            color: #2c3e50;
+            padding: 12px 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            border-radius: 8px 8px 0 0;
+            flex-shrink: 0;
+        }
+
+        .box-content {
+            padding: 16px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .form-group { margin-bottom: 13px; }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 7px 9px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .button-container {
+            padding: 12px 15px;
+            background: white;
+            border-top: 1px solid #ddd;
+            border-radius: 0 0 8px 8px;
+            flex-shrink: 0;
+        }
+
+        button.primary-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+        }
+        button.primary-btn:hover { background-color: #2980b9; }
+
+        .result {
+            margin-bottom: 16px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.93em;
+        }
+
+        #graphContainer {
+            flex: 1;
+            min-height: 0;
+            position: relative;
+        }
+
+        #graphCanvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .help-text {
+            display: block;
+            margin-top: 4px;
+            color: #888;
+            font-size: 0.82em;
+            line-height: 1.4;
+        }
+
+        /* ── Pitfall Column ── */
+        #pitfallBox {
+            display: none;
+            background: #fffbf0;
+            border: 1px solid #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(249,168,37,0.2);
+            flex-direction: column;
+            height: 80vh;
+            overflow: hidden;
+        }
+        #pitfallBox.visible { display: flex; }
+
+        .pitfall-header {
+            background:#2c3e50;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 7px 7px 0 0;
+            font-weight: bold;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .pitfall-content {
+            padding: 14px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .pitfall-item {
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            background: white;
+            border-left: 3px solid #2c3e50;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.87em;
+            color: #3d2b00;
+            line-height: 1.5;
+        }
+
+        .pitfall-label {
+            font-weight: bold;
+            color: #c0392b;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .pitfall-fix {
+            margin-top: 6px;
+            font-size: 0.85em;
+            color: #27ae60;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="title">Finding roots of algebraic and transcendental equations</h1>
+
+    <div class="grid-container" id="gridContainer">
+
+        <!-- COL 1: Inputs -->
+        <div class="box">
+            <div class="box-title">Input Parameters</div>
+            <div class="box-content">
+                <div class="form-group">
+                    <label for="equationType">Example Equations:</label>
+                    <select id="equationType" onchange="loadExample()">
+                        <option value="">Select an example equation</option>
+                        <optgroup label="Algebraic Equations">
+                            <option value="x^2 - 4">Quadratic: x^2 - 4</option>
+                            <option value="x^3 - x - 2">Cubic: x^3 - x - 2</option>
+                            <option value="x^4 - 5*x^2 + 4">Polynomial: x^4 - 5x^2 + 4</option>
+                        </optgroup>
+                        <optgroup label="Transcendental Equations">
+                            <option value="sin(x) - 0.5">Trigonometric: sin(x) - 0.5</option>
+                            <option value="exp(x) - 5">Exponential: exp(x) - 5</option>
+                            <option value="log(x) - 1">Logarithmic: log(x) - 1</option>
+                            <option value="x*cos(x) - 2">Mixed: x*cos(x) - 2</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="equation">Equation (use 'x' as variable):</label>
+                    <input type="text" id="equation" value="x^2 - 4">
+                    <small class="help-text">
+                        Supported: x^n, sin(x), cos(x), tan(x), exp(x), log(x)<br>
+                        e.g. x^3 - 2*x - 5 &nbsp;|&nbsp; sin(x) - x/3
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="method">Method:</label>
+                    <select id="method">
+                        <option value="bisection">Bisection Method</option>
+                        <option value="newton">Newton-Raphson Method</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="xMin">Lower Bound (a):</label>
+                    <input type="number" id="xMin" value="-5" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="xMax">Upper Bound (b):</label>
+                    <input type="number" id="xMax" value="5" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="tolerance">Tolerance:</label>
+                    <input type="number" id="tolerance" value="0.0001" step="0.0001">
+                </div>
+
+                <div class="form-group">
+                    <label for="maxIterations">Max Iterations:</label>
+                    <input type="number" id="maxIterations" value="100">
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="primary-btn" onclick="findRoot()">Find Root</button>
+            </div>
+        </div>
+
+        <!-- COL 2: Results + Graph -->
+        <div class="box">
+            <div class="box-title">Results and Output</div>
+            <div class="box-content">
+                <div id="result" class="result">Results will appear here...</div>
+                <div id="graphContainer">
+                    <canvas id="graphCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- COL 3: Pitfall panel — shown only when there are issues -->
+        <div class="box" id="pitfallBox">
+            <div class="pitfall-header">
+                <span></span> Issues &amp; How to Fix
+            </div>
+            <div class="pitfall-content" id="pitfallContent"></div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    let chart = null;
+
+    // ─────────────────────────────────────────
+    //  PITFALL RULES
+    //  Every rule is re-evaluated on each run.
+    //  If condition (check) is true → it's a problem → show it.
+    //  If all checks are false → no pitfalls → hide column.
+    // ─────────────────────────────────────────
+    const PITFALL_RULES = [
+        {
+            id: 'empty_equation',
+            label: 'Empty Equation',
+            check: ({ expr }) => !expr || expr.trim() === '',
+            message: 'No equation has been entered.',
+            fix: "Type an equation using 'x' as the variable, e.g. x^2 - 4 or sin(x) - 0.5"
+        },
+        {
+            id: 'invalid_syntax',
+            label: 'Invalid Equation Syntax',
+            check: ({ expr }) => {
+                if (!expr || expr.trim() === '') return false;
+                try { math.evaluate(expr, { x: 1 }); return false; }
+                catch { return true; }
+            },
+            message: 'The equation has a syntax error or uses an unsupported function and cannot be evaluated.',
+            fix: 'Use * for multiplication (e.g. 2*x not 2x), ^ for powers. Supported functions: sin, cos, tan, exp, log.'
+        },
+        {
+            id: 'constant_equation',
+            label: 'Equation Does Not Contain x',
+            check: ({ expr }) => {
+                if (!expr || expr.trim() === '') return false;
+                try {
+                    const v1 = math.evaluate(expr, { x: 1 });
+                    const v2 = math.evaluate(expr, { x: 999 });
+                    return typeof v1 === 'number' && typeof v2 === 'number' && v1 === v2;
+                } catch { return false; }
+            },
+            message: "The equation produces the same value regardless of x — it likely doesn't use the variable x.",
+            fix: "Make sure x appears in your equation, e.g. x^2 - 4 instead of just 4."
+        },
+        {
+            id: 'bounds_equal',
+            label: 'Lower and Upper Bounds Are Equal',
+            check: ({ xMin, xMax }) => xMin === xMax,
+            message: 'a and b are the same number — the search interval has zero width.',
+            fix: 'Set a and b to different values that bracket the root, e.g. a = -5, b = 5.'
+        },
+        {
+            id: 'bounds_reversed',
+            label: 'Bounds Are Reversed',
+            check: ({ xMin, xMax }) => xMin > xMax,
+            message: 'Lower bound (a) is larger than upper bound (b).',
+            fix: 'Swap the values so that a < b.'
+        },
+        {
+            id: 'tolerance_invalid',
+            label: 'Tolerance Is Zero or Negative',
+            check: ({ tolerance }) => isNaN(tolerance) || tolerance <= 0,
+            message: 'Tolerance must be a small positive number. Zero or negative values will prevent convergence.',
+            fix: 'Use a value like 0.0001 or 1e-6.'
+        },
+        {
+            id: 'tolerance_too_tiny',
+            label: 'Tolerance Is Extremely Small',
+            check: ({ tolerance }) => tolerance > 0 && tolerance < 1e-12,
+            message: 'The tolerance is below machine precision — the method will likely never satisfy this condition.',
+            fix: 'Use a realistic tolerance such as 1e-6 to 1e-10.'
+        },
+        {
+            id: 'max_iter_too_low',
+            label: 'Max Iterations Too Low',
+            check: ({ maxIterations }) => isNaN(maxIterations) || maxIterations < 5,
+            message: 'With fewer than 5 iterations the method almost certainly will not converge.',
+            fix: 'Set max iterations to at least 50–100.'
+        },
+        {
+            id: 'log_negative_bound',
+            label: 'log(x): Lower Bound Must Be > 0',
+            check: ({ expr, xMin }) => {
+                return typeof expr === 'string' && /\blog\s*\(/.test(expr) && xMin <= 0;
+            },
+            message: 'log(x) is undefined for x ≤ 0, but the lower bound is ≤ 0, which will cause evaluation errors.',
+            fix: 'Set the lower bound to a small positive value, e.g. 0.1.'
+        },
+        {
+            id: 'bisection_undefined_at_bounds',
+            label: 'Bisection: Equation Undefined at Bounds',
+            check: ({ method, f, xMin, xMax }) => {
+                if (method !== 'bisection') return false;
+                try {
+                    const fa = f(xMin), fb = f(xMax);
+                    return !isFinite(fa) || !isFinite(fb);
+                } catch { return true; }
+            },
+            message: 'f(a) or f(b) is undefined / infinite. Bisection cannot start.',
+            fix: 'Move the bounds away from singularities (e.g. 0 for log, π/2 for tan).'
+        },
+        {
+            id: 'bisection_same_sign',
+            label: 'Bisection: No Root in Interval [a, b]',
+            check: ({ method, f, xMin, xMax }) => {
+                if (method !== 'bisection') return false;
+                try {
+                    const fa = f(xMin), fb = f(xMax);
+                    if (!isFinite(fa) || !isFinite(fb)) return false; // covered above
+                    return fa * fb >= 0;
+                } catch { return false; }
+            },
+            message: 'f(a) and f(b) have the same sign. Bisection requires f(a) × f(b) < 0 (opposite signs) to guarantee a root inside the interval.',
+            fix: 'Choose bounds so the function is positive on one side and negative on the other. Check the graph to find where f(x) crosses zero.'
+        },
+        {
+            id: 'newton_small_derivative',
+            label: 'Newton-Raphson: Derivative Near Zero',
+            check: ({ method, f, xMin, xMax }) => {
+                if (method !== 'newton') return false;
+                try {
+                    const x0 = (xMin + xMax) / 2;
+                    const h  = 0.0001;
+                    const fp = (f(x0 + h) - f(x0 - h)) / (2 * h);
+                    return isFinite(fp) && Math.abs(fp) < 0.05;
+                } catch { return false; }
+            },
+            message: "The derivative at the starting point (midpoint of [a, b]) is nearly zero — Newton-Raphson may diverge or fail.",
+            fix: 'Narrow the interval so the midpoint is closer to the root, or switch to the Bisection method which does not require a derivative.'
+        }
+    ];
+
+    // ─────────────────────────────────────────
+    //  Evaluate rules and toggle column
+    // ─────────────────────────────────────────
+    function runPitfallCheck(expr, method, xMin, xMax, tolerance, maxIterations) {
+        const f = x => {
+            try { return math.evaluate(expr, { x }); }
+            catch { return NaN; }
+        };
+
+        const ctx = { expr, method, xMin, xMax, tolerance, maxIterations, f };
+
+        const triggered = PITFALL_RULES.filter(rule => {
+            try { return rule.check(ctx); }
+            catch { return false; }
+        });
+
+        const box     = document.getElementById('pitfallBox');
+        const content = document.getElementById('pitfallContent');
+        const grid    = document.getElementById('gridContainer');
+
+        if (triggered.length === 0) {
+            box.classList.remove('visible');
+            grid.classList.remove('has-pitfall');
+            return [];
+        }
+
+        content.innerHTML = triggered.map(p => `
+            <div class="pitfall-item">
+                <div class="pitfall-label">⚠ ${p.label}</div>
+                <div>${p.message}</div>
+                <div class="pitfall-fix">✔ Fix: ${p.fix}</div>
+            </div>
+        `).join('');
+
+        box.classList.add('visible');
+        grid.classList.add('has-pitfall');
+        return triggered;
+    }
+
+    // ─────────────────────────────────────────
+    //  Main entry point
+    // ─────────────────────────────────────────
+    function findRoot() {
+        const expr          = document.getElementById('equation').value.trim();
+        const method        = document.getElementById('method').value;
+        const xMin          = parseFloat(document.getElementById('xMin').value);
+        const xMax          = parseFloat(document.getElementById('xMax').value);
+        const tolerance     = parseFloat(document.getElementById('tolerance').value);
+        const maxIterations = parseInt(document.getElementById('maxIterations').value);
+
+        // Check pitfalls first
+        const issues = runPitfallCheck(expr, method, xMin, xMax, tolerance, maxIterations);
+
+        // Blocking issues — stop before running the method
+        const BLOCKING = ['empty_equation','invalid_syntax','bounds_equal','bounds_reversed','tolerance_invalid'];
+        if (issues.some(p => BLOCKING.includes(p.id))) {
+            document.getElementById('result').innerHTML =
+                '<span style="color:#e74c3c;">⚠ Resolve the issues listed in the Pitfalls column first.</span>';
+            return;
+        }
+
+        const f = x => {
+            try { return math.evaluate(expr, { x }); }
+            catch { return NaN; }
+        };
+
+        try {
+            let result;
+            if (method === 'bisection') {
+                result = bisectionMethod(f, xMin, xMax, tolerance, maxIterations);
+            } else {
+                result = newtonMethod(f, (xMin + xMax) / 2, tolerance, maxIterations);
+            }
+
+            document.getElementById('result').innerHTML = `
+                <strong>Root found:</strong> ${result.root.toFixed(6)}<br>
+                <strong>Iterations:</strong> ${result.iterations}<br>
+                <strong>Error:</strong> ${result.error.toFixed(6)}<br>
+                <strong>f(root):</strong> ${f(result.root).toFixed(6)}
+            `;
+            plotFunction(expr, xMin, xMax, result.root);
+
+        } catch (err) {
+            document.getElementById('result').innerHTML =
+                `<span style="color:#e74c3c;">Error: ${err.message}</span>`;
+            plotFunction(expr, xMin, xMax);
+        }
+    }
+
+    // ─────────────────────────────────────────
+    //  Numerical methods
+    // ─────────────────────────────────────────
+    function bisectionMethod(f, a, b, tol, maxIter) {
+        let fa = f(a), fb = f(b);
+        if (fa * fb >= 0) throw new Error("f(a) and f(b) must have opposite signs.");
+        let iter = 0, c, fc, error = tol + 1, steps = [];
+        while (error > tol && iter < maxIter) {
+            c  = (a + b) / 2;
+            fc = f(c);
+            steps.push({ iteration: iter + 1, value: c, error });
+            if (fc === 0) break;
+            if (fa * fc < 0) { b = c; fb = fc; } else { a = c; fa = fc; }
+            error = Math.abs(b - a);
+            iter++;
+        }
+        return { root: c, iterations: iter, error, steps };
+    }
+
+    function newtonMethod(f, x0, tol, maxIter) {
+        const h = 0.0001;
+        let iter = 0, error = tol + 1, x = x0, steps = [];
+        while (error > tol && iter < maxIter) {
+            const fx     = f(x);
+            const fPrime = (f(x + h) - f(x - h)) / (2 * h);
+            if (Math.abs(fPrime) < 1e-10)
+                throw new Error("Derivative is too close to zero — Newton-Raphson failed.");
+            const xNew = x - fx / fPrime;
+            error = Math.abs(xNew - x);
+            steps.push({ iteration: iter + 1, value: x, error });
+            x = xNew;
+            iter++;
+        }
+        return { root: x, iterations: iter, error, steps };
+    }
+
+    // ─────────────────────────────────────────
+    //  Chart
+    // ─────────────────────────────────────────
+    function plotFunction(expr, xMin, xMax, root = null) {
+        const canvas = document.getElementById('graphCanvas');
+        const ctx    = canvas.getContext('2d');
+        if (chart) chart.destroy();
+
+        const step = (xMax - xMin) / 200;
+        const data = [];
+        for (let x = xMin; x <= xMax; x += step) {
+            try {
+                const y = math.evaluate(expr, { x });
+                if (isFinite(y) && Math.abs(y) < 1000) data.push({ x, y });
+            } catch {}
+        }
+
+        chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [
+                    { label: 'f(x)', data, borderColor: 'blue', fill: false, pointRadius: 0 },
+                    root !== null ? {
+                        label: 'Root',
+                        data: [{ x: root, y: 0 }],
+                        backgroundColor: 'red', borderColor: 'red',
+                        pointRadius: 6, pointHoverRadius: 8, type: 'scatter'
+                    } : null
+                ].filter(Boolean)
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { type: 'linear', position: 'center', title: { display: true, text: 'x' } },
+                    y: { type: 'linear', position: 'center', title: { display: true, text: 'y' } }
+                }
+            }
+        });
+    }
+
+    function loadExample() {
+        const eq = document.getElementById('equationType').value;
+        if (!eq) return;
+        document.getElementById('equation').value = eq;
+        if (eq.includes('log')) {
+            document.getElementById('xMin').value = 0.1;
+            document.getElementById('xMax').value = 5;
+        } else if (eq.includes('sin') || eq.includes('cos')) {
+            document.getElementById('xMin').value = -3.14;
+            document.getElementById('xMax').value = 3.14;
+        } else if (eq.includes('exp')) {
+            document.getElementById('xMin').value = -2;
+            document.getElementById('xMax').value = 2;
+        }
+        findRoot();
+    }
+
+    window.onload = () => {
+        const expr = document.getElementById('equation').value;
+        const xMin = parseFloat(document.getElementById('xMin').value);
+        const xMax = parseFloat(document.getElementById('xMax').value);
+        plotFunction(expr, xMin, xMax);
+    };
+</script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "If f(x) = x^3 - x - 2, which of the following intervals contains a root?",
+      "answers": {
+        "a": "[0, 1]",
+        "b": "[1, 2]",
+        "c": "[2, 3]",
+        "d": "[3, 4]"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The order of convergence of the Newton-Raphson method is:",
+      "answers": {
+        "a": "Linear",
+        "b": "Quadratic",
+        "c": "Cubic",
+        "d": "Constant"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Which method does NOT require the derivative of the function?",
+      "answers": {
+        "a": "Newton-Raphson Method",
+        "b": "Modified Newton Method",
+        "c": "Secant Method",
+        "d": "Taylor Series Method"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "For the equation cos(x) - x = 0, the root lies approximately in which interval?",
+      "answers": {
+        "a": "[0, 1]",
+        "b": "[1, 2]",
+        "c": "[2, 3]",
+        "d": "[3, 4]"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "If f(a) * f(b) < 0, this guarantees:",
+      "answers": {
+        "a": "The function is increasing",
+        "b": "At least one root exists in (a, b)",
+        "c": "The derivative is zero",
+        "d": "The root is unique"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Which method is guaranteed to converge but may be slow?",
+      "answers": {
+        "a": "Newton-Raphson Method",
+        "b": "Secant Method",
+        "c": "Bisection Method",
+        "d": "Fixed Point Iteration"
+      },
+      "correctAnswer": "c"
+    },
+    {
+      "question": "A transcendental equation typically involves:",
+      "answers": {
+        "a": "Only polynomial expressions",
+        "b": "Trigonometric or exponential functions",
+        "c": "Only linear terms",
+        "d": "Only rational expressions"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The Secant method requires:",
+      "answers": {
+        "a": "One initial guess",
+        "b": "Two initial guesses",
+        "c": "Derivative at the root",
+        "d": "Second derivative of the function"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "If the derivative at the root is zero, Newton-Raphson method:",
+      "answers": {
+        "a": "Converges faster",
+        "b": "May fail or converge slowly",
+        "c": "Always finds complex roots",
+        "d": "Becomes identical to Bisection"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The main objective of numerical root-finding methods is to:",
+      "answers": {
+        "a": "Find exact symbolic solutions",
+        "b": "Approximate solutions iteratively",
+        "c": "Graph the function accurately",
+        "d": "Differentiate the function"
+      },
+      "correctAnswer": "b"
+    }
+  ]
+}

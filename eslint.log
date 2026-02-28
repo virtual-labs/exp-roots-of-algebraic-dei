@@ -1,0 +1,11 @@
+
+/home/runner/work/exp-roots-of-algebraic-dei/exp-roots-of-algebraic-dei/experiment/simulation/js/main.js
+   12:7   warning  'validResult1' is assigned a value but never used  no-unused-vars
+   80:6   warning  Unnecessary semicolon                              no-extra-semi
+  111:5   warning  'Plotly' is not defined                            no-undef
+  133:28  warning  'x' is defined but never used                      no-unused-vars
+  189:5   warning  'Plotly' is not defined                            no-undef
+
+✖ 5 problems (0 errors, 5 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+
